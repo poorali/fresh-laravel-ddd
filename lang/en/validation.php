@@ -173,64 +173,6 @@ return [
     */
 
     'custom' => [
-        'milestones' => [
-            'required' => 'At least one milestone is required.',
-            'array' => 'Milestones must be provided as an array.',
-        ],
-        'milestones.*.works.*.id' => [
-            'exists' => 'The specified work item does not exist.',
-        ],
-        'milestones.*.id' => [
-            'exists' => 'The specified milestone does not exist.',
-        ],
-
-        'milestones.*.title' => [
-            'required' => 'The title is required',
-            'string' => 'The milestone title must be a string.',
-            'max' => 'The milestone title cannot exceed :max characters.',
-        ],
-
-        'milestones.*.price' => [
-            'numeric' => 'The milestone price must be a number.',
-            'nullable' => 'The milestone price is optional.',
-            'min' => 'The milestone price must be at least :min USD.',
-        ],
-
-        'milestones.*.due_date' => [
-            'date' => 'The milestone due date must be a valid date.',
-            'nullable' => 'The milestone due date is optional.',
-            'after_or_equal' => 'The milestone due date must be on or after today.',
-        ],
-
-        'milestones.*.sort_order' => [
-            'required' => 'Each milestone must have a sort order.',
-            'integer' => 'The milestone sort order must be an integer.',
-        ],
-
-        'milestones.*.works' => [
-            'required' => 'Each milestone must have at least one work item.',
-            'array' => 'Work items must be provided as an array.',
-        ],
-        'milestones.*.works.*.title' => [
-            'required' => 'Each work item must have a title.',
-            'string' => 'The work item title must be a string.',
-            'max' => 'The work item title cannot exceed :max characters.',
-        ],
-
-        'milestones.*.works.*.description' => [
-            'required' => 'Each work item must have a description.',
-            'string' => 'The work item description must be a string.',
-        ],
-
-        'milestones.*.works.*.sort_order' => [
-            'required' => 'Each work item must have a sort order.',
-            'integer' => 'The work item sort order must be an integer.',
-        ],
-
-        'milestones.*.works.*.is_completed' => [
-            'required' => 'The completion status of each work item must be specified.',
-            'boolean' => 'The work item completion status must be true or false.',
-        ],
     ],
 
     /*
@@ -243,16 +185,4 @@ return [
     | of "email". This simply helps us make our message more expressive.
     |
     */
-
-    'attributes' => [
-        'milestones.*.title' => 'milestone title',
-        'milestones.*.price' => 'milestone price',
-        'milestones.*.due_date' => 'milestone due date',
-        'milestones.*.sort_order' => 'milestone sort order',
-        'milestones.*.works.*.title' => 'work item title',
-        'milestones.*.works.*.description' => 'work item description',
-        'milestones.*.works.*.sort_order' => 'work item sort order',
-        'milestones.*.works.*.is_completed' => 'work item completion status',
-    ],
-
 ];

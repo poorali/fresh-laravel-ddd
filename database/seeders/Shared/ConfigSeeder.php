@@ -2,7 +2,6 @@
 
 namespace Database\Seeders\Shared;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -43,12 +42,12 @@ class ConfigSeeder extends Seeder
                 [
                     "name" => "SiteBlog",
                     "description" => "Blog Domain",
-                    "value" => "https://insights.website.com"
+                    "value" => "https://insights.oxo.com"
                 ],
                 [
                     "name" => "SiteEmail",
                     "description" => "A contact mail",
-                    "value" => env("MAIL_FROM_ADDRESS", "postman@website.com")
+                    "value" => env("MAIL_FROM_ADDRESS", "postman@oxo.com")
                 ]
             ];
 

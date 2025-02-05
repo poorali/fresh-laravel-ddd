@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Fresh Laravel DDD Project</title>
+        <title>OXO API</title>
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-    Fresh Laravel DDD Project
+    OXO API
     </body>
 </html>
