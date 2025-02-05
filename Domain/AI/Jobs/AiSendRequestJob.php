@@ -1,0 +1,37 @@
+<?php
+
+namespace Domain\AI\Jobs;
+
+use Domain\AI\Models\AiRequest;
+use Domain\AI\Services\AiService;
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+
+class AiSendRequestJob implements ShouldQueue
+{
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    /**
+     * Create a new job instance.
+     */
+    public function __construct(protected AiRequest $aiRequest)
+    {
+        //
+    }
+
+    /**
+     * Execute the job.
+     */
+    public function handle(AiService $aiService): void
+    {
+        //
+        try {
+        $aiService->executeRequest($this->aiRequest);
+        }catch (\Exception $e){
+            app('logs')($e);
+            throw $e;
+        }
+    }
+}
